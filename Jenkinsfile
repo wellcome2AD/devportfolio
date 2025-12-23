@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Scan') {
             steps {
-                sh 'docker run --rm aquasec/trivy image $IMAGE:$TAG --severity HIGH,CRITICAL'
+                sh 'docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image $IMAGE:$TAG --severity HIGH,CRITICAL'
             }
         }
         stage('Push') {
