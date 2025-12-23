@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        IMAGE = 'username/devportfolio'
+        IMAGE = 'alicedevopser/devportfolio'
         TAG = "${BUILD_NUMBER}-${GIT_COMMIT[0..7]}"
     }
     stages {
